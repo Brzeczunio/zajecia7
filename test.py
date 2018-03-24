@@ -19,7 +19,7 @@ class WsbPlCheck(unittest.TestCase):
         search.send_keys('fraza')
         search.click()
         content = driver.find_element_by_class_name('content')
-        h2 = content.find_element_by_tag_name('h2')
+        # h2 = content.find_element_by_tag_name('h2')
         self.assertIn(u'Nie znaleziono żadnych dokumentów zawierających podane słowo.', h2.text)
 
     # Instrukcje, które zostają wykonane po każdym teście
