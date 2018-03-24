@@ -46,4 +46,23 @@ pip - służy do instalacji pakietów [pythona]
   b) unzip chromedriver_linux64.zip //wypakowanie chromedriver
 
   c) mv chromedriver /usr/local/bin/ //przenosimy plik do bin (wcześniej przęłączyć się na root i przejść do ścieżki /home/tester/Probrane/)
+
+  5. Tworzenie pierwszego testu:
+
+    a) stworzenie pliku: selenium-test.py
+
+    b) dodanie polskiego kodowania znaków. Dodanie na początku pliku .py linijki:
+    # -*- coding: utf-8 -*-
+
+    c) dodanie odpalenia pliku za pomocą komendy: ./nazwa_pliku
+    Trzeba dodać [shebang line] na początku w pliku: #! /usr/bin/python
+
+    d) błąd z unicode, trzeba przed stringie dodać: (u"Wyższe Szkoły Bankowe")
+
+    e) by korzystać z [sheblang line] z wykorzystaniem unittest trzeba dodać do pliku z testem:
+    ## if __name__ == '__main__': ##
+    ##    unittest.main()         ##
+    verbosity - mówi o gadatliwości. Można wybrać poziom od 0-2
+    Wybranie poziomu 2 daje najwięcej szczegółów odnośnie testów
+
 ```
