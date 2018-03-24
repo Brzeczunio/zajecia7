@@ -17,6 +17,7 @@ pip - służy do instalacji pakietów [pythona]
 "PIP = PYTHON INSTALLS PYTHON"
 
 1. Sprawdzenie czy jest pip:
+
   a) su - //zmiana użytkownika na root (bez zapisów plików - przełącznik "-")
 
   b) yum -y update //instalacja aktualizacji
