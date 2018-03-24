@@ -12,20 +12,15 @@ class WsbPlCheck(unittest.TestCase):
         self.driver = webdriver.Chrome()
         self.driver.implicitly_wait(10)
 
-    def test_login(self):
+    def test_Search(self):
         driver = self.driver
         driver.get('http://www.wsb.pl')
-        self.assertIn(u'Wyższe Szkoły Bankowe', driver.title)
-
-    def test_login2(self):
-        driver = self.driver
-        driver.get("http://www.wsb.pl")
-        self.assertIn(u'Uczelnie wyższe', driver.title)
-
-    def test_login2(self):
-        driver = self.driver
-        driver.get("http://www.wsb.pl")
-        self.assertIn(u'Koczkodan', driver.title)
+        search = driver.find_element_by_id('edit-search-block-form--2')
+        search.send_keys('fraza')
+        search.click()
+        content = driver.find_element_by_class_name('content')
+        h2 = content.find_element_by_tag_name('h2')
+        self.assertIn(u'Nie znaleziono żadnych dokumentów zawierających podane słowo.', h2.text)
 
     # Instrukcje, które zostają wykonane po każdym teście
     def tearDown(self):
