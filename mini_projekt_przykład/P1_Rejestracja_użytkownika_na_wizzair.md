@@ -19,4 +19,5 @@ Kroki:
   13. ~~Kliknij "ZAREJESTRUJ SIĘ"~~
 
 Oczekiwany rezultat:
+
 Rejestracja nie następuje. Użytkownik dostaje informacje, że wprowadzony adres e-mail jest niepoprawny
