@@ -14,8 +14,9 @@ Kroki:
   8. Wprowadź niepoprawny "E-mail"
   9. Wprowadź "Hasło"
   10. Wybierz "Kraj"
-  11. Akceptuj politykę prywatności
-  12. ~~Kliknij "ZAREJESTRUJ SIĘ"~~
+  11. Akceptuj biuletyn z ofertami
+  12. Akceptuj politykę prywatności
+  13. ~~Kliknij "ZAREJESTRUJ SIĘ"~~
 
 Oczekiwany rezultat:
 Rejestracja nie następuje. Użytkownik dostaje informacje, że wprowadzony adres e-mail jest niepoprawny

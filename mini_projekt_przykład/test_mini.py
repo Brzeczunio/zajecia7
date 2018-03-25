@@ -42,12 +42,13 @@ class wizzairRegistration(unittest.TestCase):
         email.send_keys(valid_email)
         password = WebDriverWait(self.driver,10).until(EC.presence_of_element_located((By.XPATH,"//input[@data-test='booking-register-password']")))
         password.send_keys(valid_password)
-        country = WebDriverWait(self.driver,10).until(EC.presence_of_element_located((By.XPATH,"//*[@class='register-form__country-container__locations']/label[164]")))
+# Nie działa :(
+         = WebDriverWait(self.driver,10).until(EC.presence_of_element_located((By.XPATH,"//*[@class='register-form__country-container__locations']/label[164]")))
         # Wyświetlenie listy
         # self.driver.execute_script("arguments[0].scrollIntoView()", country);
-        country.location_once_scrolled_into_view
-        sleep(8)
-        country.click()
+        # country.location_once_scrolled_into_view
+        # sleep(8)
+        # country.click()
         # Inna metoda na Kraj z wpisanie z klawiatury kraju
         # country = WebDriverWait(self.driver,10).until(EC.presence_of_element_located((By.XPATH,"//input[@data-test='booking-register-country']")))
         # country.send_keys(valid_country)
@@ -55,8 +56,6 @@ class wizzairRegistration(unittest.TestCase):
         special_offers.click()
         privacy_policy = WebDriverWait(self.driver,10).until(EC.presence_of_element_located((By.XPATH,"//label[@for='registration-privacy-policy-checkbox']")))
         privacy_policy.click()
-        sleep(5)
-        pass
 
     def tearDown(self):
         self.driver.quit()
