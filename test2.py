@@ -44,7 +44,8 @@ class WsbSearch(unittest.TestCase):
         search.send_keys('tester')
         search.submit()
         h2 = WebDriverWait(self.driver,10).until(EC.presence_of_all_elements_located((By.XPATH,'//*[@id="block-system-main"]/div/ol/li')))
-        assert 3 == len(h2)
+        self.assertEqual(3, len(h2))
+        # assert 3 == len(h2)
 
 
     def tearDown(self):
