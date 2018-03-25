@@ -43,7 +43,7 @@ class wizzairRegistration(unittest.TestCase):
         password = WebDriverWait(self.driver,10).until(EC.presence_of_element_located((By.XPATH,"//input[@data-test='booking-register-password']")))
         password.send_keys(valid_password)
 # Nie działa :(
-         = WebDriverWait(self.driver,10).until(EC.presence_of_element_located((By.XPATH,"//*[@class='register-form__country-container__locations']/label[164]")))
+        country = WebDriverWait(self.driver,10).until(EC.presence_of_element_located((By.XPATH,"//*[@class='register-form__country-container__locations']/label[164]")))
         # Wyświetlenie listy
         # self.driver.execute_script("arguments[0].scrollIntoView()", country);
         # country.location_once_scrolled_into_view
