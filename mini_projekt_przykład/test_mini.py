@@ -42,13 +42,13 @@ class wizzairRegistration(unittest.TestCase):
         email.send_keys(valid_email)
         password = WebDriverWait(self.driver,10).until(EC.presence_of_element_located((By.XPATH,"//input[@data-test='booking-register-password']")))
         password.send_keys(valid_password)
-# Nie działa :(
+        country = WebDriverWait(self.driver,10).until(EC.element_to_be_clickable((By.XPATH,"//input[@placeholder='Wybierz kraj']")))
+        country.click()
         country = WebDriverWait(self.driver,10).until(EC.presence_of_element_located((By.XPATH,"//*[@class='register-form__country-container__locations']/label[164]")))
-        # Wyświetlenie listy
+        # Wyświetlenie listy na chama
         # self.driver.execute_script("arguments[0].scrollIntoView()", country);
-        # country.location_once_scrolled_into_view
-        # sleep(8)
-        # country.click()
+        country.location_once_scrolled_into_view
+        country.click()
         # Inna metoda na Kraj z wpisanie z klawiatury kraju
         # country = WebDriverWait(self.driver,10).until(EC.presence_of_element_located((By.XPATH,"//input[@data-test='booking-register-country']")))
         # country.send_keys(valid_country)
@@ -56,6 +56,8 @@ class wizzairRegistration(unittest.TestCase):
         special_offers.click()
         privacy_policy = WebDriverWait(self.driver,10).until(EC.presence_of_element_located((By.XPATH,"//label[@for='registration-privacy-policy-checkbox']")))
         privacy_policy.click()
+        error_message = WebDriverWait(self.driver,10).until(EC.presence_of_element_located((By.XPATH,"//div[@id='regmodal-scroll-hook-4']//span")))
+        self.assertEqual(u'Nieprawidłowy adres e-mail', error_message.text)
 
     def tearDown(self):
         self.driver.quit()
